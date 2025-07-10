@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Use `|| true` temporarily to show the typos but not break the build
-      - run: pipx run codespell || true
+      - run: pipx run codespell --ignore-words-list=dependees,ned || true
 
   python-tests:
     name: Python ${{ matrix.python-version }} tests
